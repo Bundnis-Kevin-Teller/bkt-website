@@ -32,11 +32,6 @@ Diese Website ist die offizielle Plattform der Community und dient rein der Unte
       v5.x
     </td>
     <td align="center">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" width="48" height="48" alt="Tailwind CSS"/><br/>
-      <strong>Tailwind CSS</strong><br/>
-      v3.x
-    </td>
-    <td align="center">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="48" height="48" alt="TypeScript"/><br/>
       <strong>TypeScript</strong><br/>
       v5.x
