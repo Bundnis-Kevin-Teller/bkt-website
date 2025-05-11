@@ -85,3 +85,5 @@ Schreib uns über [bkt-info.org](https://bkt-info.org) oder komm auf unseren Dis
 ---
 
 © 2025 Bündnis Kevin Teller – Communityprojekt mit Meme-Herz ❤️
+---
+**Designed with ❤️ by EministarVR**
