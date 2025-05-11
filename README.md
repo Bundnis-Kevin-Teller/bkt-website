@@ -1,7 +1,7 @@
 # 🪑 Bündnis Kevin Teller – Offizielle Website
 
 <p align="center">
-  <img src="https://bkt-info.org/sp.png" alt="BKT Logo" width="300"/>
+  <img src="https://bkt-info.org/bkt.png" alt="BKT Logo" width="300"/>
 </p>
 
 ---
