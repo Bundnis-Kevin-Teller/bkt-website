@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+  }
+
+  body {
+    @apply bg-gradient-to-br from-red-100 via-white to-red-200 min-h-screen text-gray-800 transition-colors duration-300;
+    background-attachment: fixed;
+  }
+
+  .dark body {
+    @apply bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-100;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply backdrop-blur-md bg-white/90 border border-white/50 rounded-xl shadow-lg
+           dark:bg-gray-900/90 dark:border-gray-800/50 transition-all duration-300;
+  }
+  
+  .glass-panel:hover {
+    @apply shadow-xl dark:shadow-gray-900/50;
+  }
+  
+  .neon-button {
+    @apply px-6 py-3 bg-gradient-to-r from-red-500 to-red-600
+           dark:from-red-600 dark:to-red-700
+           rounded-lg text-white font-semibold relative
+           transition-all duration-300 ease-out shadow-md hover:shadow-lg
+           hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-12 text-gray-900 dark:text-white;
+  }
+
+  .content-section {
+    @apply glass-panel p-6 md:p-8 lg:p-12 my-16 md:my-24 relative transition-all duration-500 ease-out max-w-7xl mx-auto;
+  }
+
+  .nav-link {
+    @apply text-gray-700 hover:text-red-600 font-medium 
+           dark:text-gray-300 dark:hover:text-red-400
+           transition-all duration-300 relative;
+  }
+
+  .nav-link::after {
+    @apply content-[''] absolute w-full h-0.5 bg-red-500 left-0 -bottom-1
+           scale-x-0 origin-left transition-transform duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply scale-x-100;
+  }
+
+  .hero-title {
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-900 dark:text-white max-w-5xl mx-auto;
+  }
+
+  .form-input {
+    @apply w-full bg-white/50 p-3 text-gray-800 rounded-lg
+           dark:bg-gray-800/50 dark:text-white
+           border border-gray-200 dark:border-gray-700
+           focus:border-red-400 dark:focus:border-red-500 outline-none
+           transition-all duration-300;
+  }
+
+  .footer {
+    @apply py-6 px-4 bg-white/80 backdrop-blur-md border-t border-gray-100
+           dark:bg-gray-900/80 dark:border-gray-800 transition-colors duration-300 mt-24;
+  }
+
+  .footer-content {
+    @apply container mx-auto flex flex-col md:flex-row justify-between items-center gap-4;
+  }
+
+  .footer-text {
+    @apply text-gray-600 dark:text-gray-400 text-sm;
+  }
+
+  .footer-heart {
+    @apply text-red-500 dark:text-red-400 inline-block transform hover:scale-110 transition-transform duration-300;
+  }
+
+  .theme-button {
+    @apply p-2 rounded-lg text-gray-600 hover:text-red-600 
+           dark:text-gray-400 dark:hover:text-red-400
+           transition-all duration-300;
+  }
+
+  .theme-button.active {
+    @apply text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-900/20;
+  }
+
+  .mobile-nav-overlay {
+    @apply fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300;
+    opacity: 0;
+    z-index: 40;
+    pointer-events: none;
+  }
+
+  .mobile-nav-overlay.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .mobile-nav-content {
+    @apply fixed top-[4.5rem] right-0 w-64 h-[calc(100vh-4.5rem)]
+           glass-panel rounded-l-xl p-6
+           flex flex-col gap-6 transition-transform duration-300 ease-out;
+    transform: translateX(100%);
+    z-index: 50;
+  }
+
+  .mobile-nav-content.visible {
+    transform: translateX(0);
+  }
+
+  .feature-card {
+    @apply glass-panel p-6 text-center transition-all duration-300 hover:-translate-y-2;
+  }
+
+  .feature-icon {
+    @apply mx-auto mb-4 text-red-500 dark:text-red-400 transition-transform duration-300;
+  }
+
+  .feature-card:hover .feature-icon {
+    @apply scale-110;
+  }
+
+  .achievement-card {
+    @apply glass-panel p-6 text-center transition-all duration-300 hover:-translate-y-2;
+  }
+
+  .testimonial-card {
+    @apply glass-panel p-8 flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-2;
+  }
+
+  .testimonial-image {
+    @apply w-24 h-24 rounded-full object-cover mb-6 border-4 border-white dark:border-gray-800 shadow-lg;
+  }
+
+  .testimonial-content {
+    @apply space-y-4;
+  }
+
+  .event-card {
+    @apply glass-panel p-6 flex items-start gap-6 transition-all duration-300 hover:-translate-y-2;
+  }
+
+  .event-date {
+    @apply flex flex-col items-center justify-center bg-red-100 dark:bg-red-900/30 
+           rounded-lg p-4 text-red-600 dark:text-red-400 min-w-[5rem];
+  }
+
+  .event-details {
+    @apply space-y-3;
+  }
+
+  .movement-button {
+    @apply px-6 py-3 bg-white text-red-600 rounded-lg font-semibold
+           flex items-center gap-2 transition-all duration-300
+           hover:bg-red-50 hover:-translate-y-0.5 shadow-lg;
+  }
+
+  .team-card {
+    @apply glass-panel p-8 flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-2;
+  }
+
+  .team-image {
+    @apply w-40 h-40 rounded-full object-cover mb-8 border-4 border-white dark:border-gray-800 shadow-lg
+           transition-transform duration-300 hover:scale-105;
+  }
+
+  .team-content {
+    @apply space-y-3;
+  }
+
+  .support-card {
+    @apply bg-white/10 backdrop-blur-md rounded-xl p-8 text-center
+           border border-white/20 transition-all duration-300
+           hover:-translate-y-2 hover:bg-white/20;
+  }
+
+  .support-button {
+    @apply px-8 py-4 bg-white text-amber-600 rounded-lg font-semibold text-lg
+           flex items-center gap-3 mx-auto w-fit
+           transition-all duration-300
+           hover:bg-amber-50 hover:-translate-y-0.5 shadow-lg;
+  }
+}
